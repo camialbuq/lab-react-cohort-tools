@@ -1,4 +1,5 @@
 import placeholderImage from "../assets/profile-icon.png";
+import { Link } from "react-router-dom";
 
 function StudentCard({
   _id,
@@ -11,6 +12,10 @@ function StudentCard({
   className,
 }) {
   return (
+    <Link to={`/students/${_id}`}>
+      {/* /*   with link we are seeing how to build a detail page for each project
+   this makes the name of each project become a link
+    which will change the URL to projects/_id of that specific project  */}
       <div
         className={`StudentCard flex justify-between items-center p-3 mb-2 bg-white shadow-sm rounded border border-gray-200 hover:bg-gray-50 ${className}`}
       >
@@ -35,6 +40,7 @@ function StudentCard({
         <span style={{ flexBasis: "20%" }}>{email}</span>
         <span style={{ flexBasis: "20%" }}>{phone}</span>
       </div>
+    </Link>
   );
 }
 
